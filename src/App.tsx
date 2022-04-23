@@ -1,9 +1,10 @@
 import React from 'react';
+import { Heading } from './LeftDisplay/LeftDisplay.style';
 
 function App() {
   return (
     <div>
-      <h1>Hello</h1>
+      <Heading>Hello</Heading>
     </div>
   );
 }
