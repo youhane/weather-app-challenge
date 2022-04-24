@@ -1,10 +1,15 @@
+import { Global } from '@emotion/react';
 import React from 'react';
-import { Heading } from './LeftDisplay/LeftDisplay.style';
+import LeftDisplay from './Components/LeftDisplay/LeftDisplay';
+import RightDisplay from './Components/RightDisplay/RightDisplay';
+import { GlobalStyles } from './GlobalStyles';
 
 function App() {
   return (
     <div>
-      <Heading>Hello</Heading>
+      <Global styles={GlobalStyles} />
+      <LeftDisplay/>
+      <RightDisplay/>
     </div>
   );
 }
