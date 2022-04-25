@@ -6,11 +6,13 @@ import { GlobalStyles } from './GlobalStyles';
 
 function App() {
   return (
-    <div>
+    <>
       <Global styles={GlobalStyles} />
-      <LeftDisplay/>
-      <RightDisplay/>
-    </div>
+      <div>
+        <LeftDisplay/>
+        <RightDisplay/>
+      </div>
+    </>
   );
 }
 
