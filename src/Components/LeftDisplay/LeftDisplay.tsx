@@ -9,8 +9,14 @@ export default function LeftDisplay() {
         <div className='search'>
           <SearchButton>Search for places</SearchButton>
           <CircleButton>
-            <IconContext.Provider value={{ style: {background: 'transparent'} }}>
-              <MdGpsFixed />
+            <IconContext.Provider
+              value={{ 
+                style: {
+                  background: 'transparent', padding: '0', display: 'flex'
+                } 
+              }}
+            >
+              <MdGpsFixed size={20} />
             </IconContext.Provider>
           </CircleButton>
         </div>

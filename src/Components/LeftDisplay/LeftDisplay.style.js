@@ -22,5 +22,5 @@ export const SearchButton = styled('button')`
 export const CircleButton = styled('button')`
   background: #6E707A;
   border-radius: 50%;
-  padding: 1rem;
+  padding: .5rem;
 `
