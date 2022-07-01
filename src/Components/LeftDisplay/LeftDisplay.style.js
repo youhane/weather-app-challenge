@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
-import {ReactComponent as cloud} from '../../assets/images/cloud.svg';
+import BackgroundClouds from '../../assets/icons/Cloud-background.png';
 
 export const Wrapper = styled('div')`
   background: #1E213A;
-  height: 100vh;
-  width: 45vh;
-  padding: 2rem 1rem;
+  height: 91.5vh;
+  width: 25vw;
+  padding: 2rem 0rem;
 
   *{
     background: transparent;
@@ -27,13 +27,26 @@ export const Top = styled('div')`
     }
   }
 `
-export const CircleButton = styled('button')`
+export const GPSButton = styled('button')`
   border-radius: 50%;
 `
 
 export const Middle = styled('div')`
+  background: linear-gradient(
+      rgba(30, 33, 58, 0.95) 100%,
+      rgba(30, 33, 58, 0.95) 100%
+    ),
+    url(${BackgroundClouds});
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: 150%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
   text-align: center;
-
+  
   h1{
     font-size: 5rem;
   }
@@ -41,35 +54,16 @@ export const Middle = styled('div')`
   h2{
     font-size: 2rem;
   }
-`
 
-export const Cloud = styled(cloud)`
-  position: absolute;
-  opacity: 0.5;
-  height: auto;
-  width: 5rem;
-
-  :nth-child(1){
-    left: 18%;
-    top: 17%;
-  }
-  
-  :nth-child(2){
-    left: 1%;
-    top: 15%;
-  }
-
-  :nth-child(3){
-    left: 1%;
-    top: 47%;
-  }
-
-  :nth-child(4){
-    left: 18%;
-    top: 45%;
+  img{
+    width: 50%;
   }
 `
 
 export const Bottom = styled('div')`
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 `

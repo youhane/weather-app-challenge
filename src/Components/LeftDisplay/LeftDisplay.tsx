@@ -1,4 +1,4 @@
-import { Bottom, CircleButton, Middle, Top, Wrapper, Cloud } from './LeftDisplay.style'
+import { Bottom, GPSButton, Middle, Top, Wrapper } from './LeftDisplay.style'
 import { MdGpsFixed, MdLocationPin } from 'react-icons/md'
 import { IconContext } from 'react-icons'
 import Shower from '../../assets/icons/Shower.png';
@@ -22,7 +22,7 @@ export default function LeftDisplay() {
     <Wrapper>
         <Top>
           <button>Search for places</button>
-          <CircleButton>
+          <GPSButton>
             <IconContext.Provider
               value={{ 
                 style: {
@@ -32,13 +32,9 @@ export default function LeftDisplay() {
             >
               <MdGpsFixed size={20} />
             </IconContext.Provider>
-          </CircleButton>
+          </GPSButton>
         </Top>
         <Middle>
-          <Cloud/>
-          <Cloud/>
-          <Cloud/>
-          <Cloud/>
           <img src={Shower} alt="shower" />
           <h1>15<span><sup>o</sup>C</span></h1>
           <h2>Shower</h2>

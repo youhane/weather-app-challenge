@@ -8,6 +8,7 @@ export const GlobalStyles = css`
         margin: 0;
         padding: 0;
         border: 0;
+        font-family: Raleway;
     }
 `
 
