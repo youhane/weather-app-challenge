@@ -7,6 +7,6 @@ interface CircleButtonProps {
 
 export const CircleButton: React.FC<CircleButtonProps> = ({temp}) => {
   return (
-    <Wrapper><sup>o</sup>{temp}</Wrapper>
+    <Wrapper>°{temp}</Wrapper>
   )
 }

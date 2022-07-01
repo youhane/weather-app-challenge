@@ -48,15 +48,24 @@ export const Middle = styled('div')`
   text-align: center;
   
   h1{
-    font-size: 5rem;
+    font-size: 6rem;
+    font-weight: 500;
+    color: #E7E7EB;
   }
 
   h2{
     font-size: 2rem;
+    font-weight: 500;
+    color: #A09FB1;
+  }
+
+  span{
+    color: #A09FB1;
+    font-size: 2rem;
   }
 
   img{
-    width: 50%;
+    width: 40%;
   }
 `
 
@@ -66,4 +75,12 @@ export const Bottom = styled('div')`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  color: #88869D;
+
+  *{
+    color: #88869D;
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+  }
 `

@@ -3,6 +3,7 @@ import TempButtons from '../TempButtons/TempButtons'
 import { WeatherCard } from '../WeatherCard/WeatherCard'
 import Shower from '../../assets/icons/Shower.png';
 import { WeatherCards } from './RightDisplay.style';
+import Highlights from '../Highlights/Highlights';
 
 export default function RightDisplay() {
   return (
@@ -12,6 +13,7 @@ export default function RightDisplay() {
         <WeatherCard day='Tomorrow' img={Shower} temp='15'/>
         <WeatherCard day='Tomorrow' img={Shower} temp='15'/>
       </WeatherCards>
+      <Highlights/>
     </div>
   )
 }

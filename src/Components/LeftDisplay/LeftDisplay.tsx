@@ -36,7 +36,7 @@ export default function LeftDisplay() {
         </Top>
         <Middle>
           <img src={Shower} alt="shower" />
-          <h1>15<span><sup>o</sup>C</span></h1>
+          <h1>15<span>°C</span></h1>
           <h2>Shower</h2>
         </Middle>
         <Bottom>
