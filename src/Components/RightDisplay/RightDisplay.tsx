@@ -4,6 +4,7 @@ import { WeatherCard } from '../WeatherCard/WeatherCard'
 import Shower from '../../assets/icons/Shower.png';
 import { WeatherCards } from './RightDisplay.style';
 import Highlights from '../Highlights/Highlights';
+import Footer from '../Footer/Footer';
 
 export default function RightDisplay() {
   return (
@@ -14,6 +15,7 @@ export default function RightDisplay() {
         <WeatherCard day='Tomorrow' img={Shower} temp='15'/>
       </WeatherCards>
       <Highlights/>
+      <Footer />
     </div>
   )
 }
