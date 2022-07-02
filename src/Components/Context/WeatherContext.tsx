@@ -19,7 +19,6 @@ export const WeatherProvider = (props: any) => {
 
     useEffect(() => {
         axios.get(BASE_URL+CURRENT_WEATHER).then(res => {
-            console.log(res.data)
             setCurrentWeather(res.data)
             const newLocation = {
                 cityName: res.data.name.toLowerCase(),
