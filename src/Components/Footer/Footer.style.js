@@ -1,6 +1,12 @@
 import styled from "@emotion/styled";
 
-export const Wrapper = styled('div')`
-    color: #A09FB1;
-    text-align: center;
+export const Wrapper = styled('footer')`
+    color: #828282;
+    font-weight:500;
+    text-align:center;
+
+    a{
+        color: #828282;
+        font-weight:700;
+    }
 `

@@ -5,3 +5,6 @@ export const WeatherCards = styled('div')`
     gap: 2rem;
     margin-left: 3rem;
 `;
+
+export const Wrapper = styled('div')`
+`

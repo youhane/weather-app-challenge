@@ -3,9 +3,9 @@ import BackgroundClouds from '../../assets/icons/Cloud-background.png';
 
 export const Wrapper = styled('div')`
   background: #1E213A;
-  height: 91.5vh;
+  height: auto;
   width: 25vw;
-  padding: 2rem 0rem;
+  padding: 1.8rem 0rem;
 
   *{
     background: transparent;

@@ -1,8 +1,8 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { createContext } from "react";
 
-export const WeatherContext = createContext<any | null>(null);
+export const WeatherContext = createContext<any>(null);
 
 export const WeatherProvider = (props: any) => {
     const [currentWeather, setCurrentWeather] = useState(null)
@@ -17,20 +17,35 @@ export const WeatherProvider = (props: any) => {
     const CURRENT_WEATHER = `weather?q=${location.cityName}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`
     const FUTURE_WEATHER = `forecast?lat=${location.latitude}&lon=${location.longitude}&appid=${process.env.REACT_APP_API_KEY}`
 
-    useEffect(() => {
-        axios.get(BASE_URL+CURRENT_WEATHER).then(res => {
-            setCurrentWeather(res.data)
-            const newLocation = {
-                cityName: res.data.name.toLowerCase(),
-                longitude: res.data.coord.lon,
-                latitude: res.data.coord.lat,
-            }
-            setLocation(newLocation)
-        });
+    const getCurrentWeather = useCallback(
+        () => {
+           axios.get(BASE_URL+CURRENT_WEATHER).then(res => {
+               setCurrentWeather(res.data)
+               const newLocation = {
+                   cityName: res.data.name.toLowerCase(),
+                   longitude: res.data.coord.lon,
+                   latitude: res.data.coord.lat,
+               }
+               setLocation(newLocation)
+           });
+        },
+        [BASE_URL, CURRENT_WEATHER],
+      )
+
+    const getFutureWeather = useCallback(
+      () => {
         axios.get(BASE_URL+FUTURE_WEATHER).then(res => {
             setFutureWeather(res.data)
         })
-    }, [BASE_URL, CURRENT_WEATHER, FUTURE_WEATHER])
+      },
+      [BASE_URL, FUTURE_WEATHER],
+    )
+
+    useEffect(() => {
+        getCurrentWeather()
+        getFutureWeather()
+    }, [getCurrentWeather, getFutureWeather])
+
 
     return (
         <WeatherContext.Provider value={{ currentWeather, futureWeather, location, setLocation }}>
