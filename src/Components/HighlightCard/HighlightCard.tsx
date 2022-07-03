@@ -13,6 +13,14 @@ interface HightlightCardProps {
 }
 
 export const HighlightCard: React.FC<HightlightCardProps> = ({ name, value, measure, windStatus, humidity }) => {
+    const windDirection = (): String => {
+        let direction = ''
+        if(windStatus < 90) direction = 'North'
+        else if(windStatus >= 90 && windStatus < 180) direction = 'East'
+        else if(windStatus >= 180 && windStatus < 270) direction = 'South'
+        else if(windStatus >= 270) direction = 'West'
+        return direction
+      }
     return (
         <Wrapper>
             <p>{name}</p>
@@ -28,7 +36,7 @@ export const HighlightCard: React.FC<HightlightCardProps> = ({ name, value, meas
                     >
                         <HiOutlinePaperAirplane size={30} style = {{transform: `rotate(${windStatus}deg)`}} />
                     </IconContext.Provider>
-                   <p>{windStatus} deg</p> 
+                   <p>{windDirection()}</p> 
                 </WindBlow>
             )}
             {humidity && (
