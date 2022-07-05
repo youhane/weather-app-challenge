@@ -9,6 +9,7 @@ import Rain from '../../assets/icons/HeavyRain.png';
 import Cloudy from '../../assets/icons/LightCloud.png';
 import Snow from '../../assets/icons/Snow.png';
 import Thunderstorm from '../../assets/icons/Thunderstorm.png';
+import SearchBar from '../SearchBar/SearchBar';
 
 export default function LeftDisplay() {
   const { currentWeather, location } = useContext(WeatherContext);
@@ -45,6 +46,7 @@ export default function LeftDisplay() {
 
   return (
     <Wrapper>
+        <SearchBar/>
         <Top>
           <button>Search for places</button>
           <GPSButton>
