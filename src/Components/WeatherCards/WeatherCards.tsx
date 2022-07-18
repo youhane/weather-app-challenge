@@ -5,7 +5,6 @@ import { WeatherContext } from '../Context/WeatherContext';
 
 export default function WeatherCards() {
   const { futureWeather } = useContext(WeatherContext);
-  console.log(futureWeather)
   
   return (
     <Wrapper>

@@ -1,28 +1,30 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { CloseButton, SearchInput, Selection, Wrapper } from './SearchBar.style'
-import { AiOutlineSearch } from 'react-icons/ai'
-import { GrClose } from 'react-icons/gr'
 import { WeatherContext } from '../Context/WeatherContext';
-import { IconContext } from 'react-icons';
 
 const CITIES = ['Jakarta', 'Singapore', 'Bangkok', 'New York', 'London', 'Kuala Lumpur', 'Tokyo', 'Seoul']
 
-export default function SearchBar() {
-  const {location, setLocation} = useContext(WeatherContext)
-  const locationRef = useRef<any>(location)
+interface SearchBarProps {
+  setSelectLocation: (value: boolean) => void;
+}
+
+export const SearchBar: React.FC<SearchBarProps> = ({setSelectLocation}) => {
+  const {setLocationName, locationName} = useContext(WeatherContext)
+  const [chooseLocation, setChooseLocation] = useState('')
+  const locationRef = useRef<any>(locationName)
 
   return (
     <Wrapper>
-      <CloseButton>X</CloseButton>
+      <CloseButton onClick={() => setSelectLocation(false)}>X</CloseButton>
       <br />
       <SearchInput>
-        <input type='text' name='search' ref={locationRef} placeholder='Search Location' />
-        <button type='button' onClick={() => setLocation(locationRef.current.value)}>
+        <input type='text' name='search' ref={locationRef} disabled value={chooseLocation} placeholder='Search Location' />
+        <button type='button' onClick={() => setLocationName(locationRef.current.value)}>
           Search
         </button>
       </SearchInput>
       {CITIES.map((city, index) => (
-          <Selection key={index} value={city}>{city}</Selection>
+          <Selection key={index} value={city} onClick={() => setChooseLocation(city)} >{city}</Selection>
       ))}
     </Wrapper>
   )

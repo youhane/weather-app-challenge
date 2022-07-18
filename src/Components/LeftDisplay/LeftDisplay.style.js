@@ -10,6 +10,10 @@ export const Wrapper = styled('div')`
   *{
     background: transparent;
   }
+
+  button:hover{
+    cursor: pointer;
+  }
 `
 
 export const Top = styled('div')`
@@ -29,6 +33,10 @@ export const Top = styled('div')`
 `
 export const GPSButton = styled('button')`
   border-radius: 50%;
+
+  :hover{
+    cursor: pointer;
+  }
 `
 
 export const Middle = styled('div')`

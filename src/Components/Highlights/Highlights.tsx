@@ -10,10 +10,10 @@ export default function Highlights() {
     <Wrapper>
         <Heading>Today’s Hightlights</Heading>
         <Grid>
-          <HighlightCard name='Wind Status' value={currentWeather?.wind.gust} measure='mph' windStatus={currentWeather?.wind.deg} />
-          <HighlightCard name='Humidity' value={currentWeather?.main.humidity} measure='%' humidity={currentWeather?.main.humidity}/>
-          <HighlightCard name='Visibility' value={currentWeather?.visibility} measure='miles'/>
-          <HighlightCard name='Air Pressure' value={currentWeather?.main.pressure} measure='mb'/>
+          <HighlightCard name='Wind Status' value={currentWeather?.wind.gust || '?'} measure='mph' windStatus={currentWeather?.wind.deg} />
+          <HighlightCard name='Humidity' value={currentWeather?.main.humidity || '?'} measure='%' humidity={currentWeather?.main.humidity}/>
+          <HighlightCard name='Visibility' value={currentWeather?.visibility || '?'} measure='miles'/>
+          <HighlightCard name='Air Pressure' value={currentWeather?.main.pressure || '?'} measure='mb'/>
         </Grid>
     </Wrapper>
   )

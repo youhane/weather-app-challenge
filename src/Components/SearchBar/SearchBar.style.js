@@ -14,6 +14,10 @@ export const CloseButton = styled('button')`
     *{
         color: #fff;
     }
+
+    :hover{
+        cursor: pointer;
+    }
 `
 
 export const SearchInput = styled('div')`

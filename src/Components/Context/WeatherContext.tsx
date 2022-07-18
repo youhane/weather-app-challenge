@@ -7,14 +7,15 @@ export const WeatherContext = createContext<any>(null);
 export const WeatherProvider = (props: any) => {
     const [currentWeather, setCurrentWeather] = useState(null)
     const [futureWeather, setFutureWeather] = useState(null)
+    const [locationName, setLocationName] = useState('jakarta')
     const [location, setLocation] = useState({
-        cityName: 'jakarta',
+        cityName: locationName,
         longitude: '106.8451',
         latitude: '-6.2146',
     })
 
     const BASE_URL = `https://api.openweathermap.org/data/2.5/`
-    const CURRENT_WEATHER = `weather?q=${location.cityName}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`
+    const CURRENT_WEATHER = `weather?q=${locationName}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`
     const FUTURE_WEATHER = `forecast?lat=${location.latitude}&lon=${location.longitude}&appid=${process.env.REACT_APP_API_KEY}`
 
     const getCurrentWeather = useCallback(
@@ -46,9 +47,8 @@ export const WeatherProvider = (props: any) => {
         getFutureWeather()
     }, [getCurrentWeather, getFutureWeather])
 
-
     return (
-        <WeatherContext.Provider value={{ currentWeather, futureWeather, location, setLocation }}>
+        <WeatherContext.Provider value={{ currentWeather, futureWeather, location, setLocationName, locationName }}>
             {props.children}
         </WeatherContext.Provider>
     )

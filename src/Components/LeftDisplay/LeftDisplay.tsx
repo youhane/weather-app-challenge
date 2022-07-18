@@ -1,4 +1,5 @@
 import { Bottom, GPSButton, Middle, Top, Wrapper } from './LeftDisplay.style'
+import { SearchBar } from '../SearchBar/SearchBar';
 import { MdGpsFixed, MdLocationPin } from 'react-icons/md'
 import { IconContext } from 'react-icons'
 import { WeatherContext } from '../Context/WeatherContext';
@@ -9,11 +10,11 @@ import Rain from '../../assets/icons/HeavyRain.png';
 import Cloudy from '../../assets/icons/LightCloud.png';
 import Snow from '../../assets/icons/Snow.png';
 import Thunderstorm from '../../assets/icons/Thunderstorm.png';
-import SearchBar from '../SearchBar/SearchBar';
 
 export default function LeftDisplay() {
   const { currentWeather, location } = useContext(WeatherContext);
   const [weatherImage, setWeatherImage] = useState('')
+  const [selectLocation, setSelectLocation] = useState(false)
 
   const todayDate = (): String => {
     const DAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -46,9 +47,9 @@ export default function LeftDisplay() {
 
   return (
     <Wrapper>
-        <SearchBar/>
+        {selectLocation && <SearchBar setSelectLocation={setSelectLocation}/>}
         <Top>
-          <button>Search for places</button>
+          <button onClick={() => setSelectLocation(true)}>Search for places</button>
           <GPSButton>
             <IconContext.Provider
               value={{ 
