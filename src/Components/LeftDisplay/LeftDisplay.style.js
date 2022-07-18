@@ -14,6 +14,11 @@ export const Wrapper = styled('div')`
   button:hover{
     cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+    width: 100vw;
+    margin-bottom: 2rem;
+  }
 `
 
 export const Top = styled('div')`

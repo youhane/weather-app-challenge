@@ -4,6 +4,13 @@ export const Wrapper = styled('div')`
     position: absolute;
     background: #1E213A;
     width: 25vw;
+    align-items: center;
+
+    @media (max-width: 768px) {
+        width: 100vw;
+        margin-bottom: 2rem;
+        height: 100%;
+    }
 `
 
 export const CloseButton = styled('button')`
@@ -31,6 +38,10 @@ export const SearchInput = styled('div')`
         border: 1px solid #E7E7EB;
         width: 15rem;
         padding-left: .5rem;
+
+        @media (max-width: 768px){
+            width: 70vw;
+        }
     }
 
     button{
@@ -49,5 +60,9 @@ export const Selection = styled('button')`
 
     :hover{
         background: #5D5F6A;
+    }
+
+    @media (max-width: 768px){
+        width: 90vw;
     }
 `
